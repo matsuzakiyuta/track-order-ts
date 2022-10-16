@@ -1,24 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import TrackOrderTable, { TrackOrder } from "./components/TrackOrderTable";
+import { suffleArray } from "./utils/utils";
+import { Container } from "@chakra-ui/react";
+
+const tracks: TrackOrder[] = [
+  {
+    title: "track01",
+    artist: "artist01",
+    note: "note01",
+  },
+  {
+    title: "track02",
+    artist: "artist02",
+    note: "note02",
+  },
+];
 
 function App() {
+  const orderdedTracks = suffleArray(tracks);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container maxW="container.lg">
+        <div className="e-track-order-title">曲順</div>
+        <div className="e-table">
+          <TrackOrderTable trackOrders={orderdedTracks} />
+        </div>
+      </Container>
     </div>
   );
 }

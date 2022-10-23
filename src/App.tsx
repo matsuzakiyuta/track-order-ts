@@ -3,8 +3,7 @@ import "./App.css";
 import TrackOrderTable, { TrackOrder } from "./components/TrackOrderTable";
 import { shuffleArray } from "./utils/utils";
 import { Container } from "@chakra-ui/react";
-import InputForm from "./components/InputForm";
-import { GrDocumentCsv } from "react-icons/gr";
+import CsvInputForm from "./components/CsvInputForm";
 
 const tracks: TrackOrder[] = [
   {
@@ -24,11 +23,7 @@ function App() {
   return (
     <div className="App">
       <Container maxW="container.lg">
-        <InputForm
-          icon={<GrDocumentCsv />}
-          type="text"
-          placeholder="CSVをあげてください"
-        />
+        <CsvInputForm />
         <div className="e-track-order-title">曲順</div>
         <div className="e-table">
           <TrackOrderTable trackOrders={orderedTracks} />

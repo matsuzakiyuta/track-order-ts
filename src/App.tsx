@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import TrackOrderTable, { TrackOrder } from "./components/TrackOrderTable";
-import { suffleArray } from "./utils/utils";
+import { shuffleArray } from "./utils/utils";
 import { Container } from "@chakra-ui/react";
 
 const tracks: TrackOrder[] = [
@@ -18,13 +18,13 @@ const tracks: TrackOrder[] = [
 ];
 
 function App() {
-  const orderdedTracks = suffleArray(tracks);
+  const orderedTracks = shuffleArray(tracks);
   return (
     <div className="App">
       <Container maxW="container.lg">
         <div className="e-track-order-title">曲順</div>
         <div className="e-table">
-          <TrackOrderTable trackOrders={orderdedTracks} />
+          <TrackOrderTable trackOrders={orderedTracks} />
         </div>
       </Container>
     </div>

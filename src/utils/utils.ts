@@ -1,6 +1,6 @@
 import { TrackOrder } from "../components/TrackOrderTable";
 
-export const suffleArray = (array: TrackOrder[]): TrackOrder[] => {
+export const shuffleArray = (array: TrackOrder[]): TrackOrder[] => {
   const cloneArray = [...array];
   for (let i = cloneArray.length - 1; i >= 0; i--) {
     let rand = Math.floor(Math.random() * (i + 1));

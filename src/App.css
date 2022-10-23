@@ -14,3 +14,7 @@
 .e-input-group {
   padding: 3rem;
 }
+
+.e-flex {
+  flex: auto;
+}

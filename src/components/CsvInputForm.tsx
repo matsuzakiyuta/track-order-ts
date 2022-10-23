@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import classNames from "classnames";
 
 function CsvInputForm() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -13,7 +14,7 @@ function CsvInputForm() {
     inputRef.current?.click();
   };
   return (
-    <form>
+    <form className={classNames("e-input-group", "e-flex")}>
       <div className="e-csv-file">
         <div className="e-import-button">
           <button type={"button"} onClick={handleFileUpload}>
